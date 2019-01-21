@@ -1,0 +1,28 @@
+entity.cloudhook.collection:
+  path: '/admin/config/cloudhooks'
+  defaults:
+    _entity_list: 'cloudhook'
+    _title: 'Cloudhooks configuration'
+  requirements:
+    _permission: 'administer cloudhooks'
+entity.cloudhook.add_form:
+  path: '/admin/config/cloudhooks/add'
+  defaults:
+    _entity_form: 'cloudhook.add'
+    _title: 'Add cloudhook configuration'
+  requirements:
+    _permission: 'administer cloudhooks'
+entity.cloudhook.edit_form:
+  path: '/admin/config/cloudhooks/{cloudhook}'
+  defaults:
+    _entity_form: 'cloudhook.edit'
+    _title: 'Edit cloudhook configuration'
+  requirements:
+    _permission: 'administer cloudhooks'
+entity.cloudhook.delete_form:
+  path: '/admin/config/cloudhooks/{cloudhook}/delete'
+  defaults:
+    _entity_form: 'cloudhook.delete'
+    _title: 'Delete cloudhook configuration'
+  requirements:
+    _permission: 'administer cloudhooks'

@@ -1,0 +1,5 @@
+entity.cloudhook.add_form:
+  route_name: 'entity.cloudhook.add_form'
+  title: 'Add cloudhook'
+  appears_on:
+    - entity.cloudhook.collection

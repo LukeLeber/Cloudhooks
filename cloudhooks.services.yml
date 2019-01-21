@@ -1,0 +1,16 @@
+services:
+  cloudhooks.logger:
+    class: 'Psr\Logging\LoggerInterface'
+    factory: 'logger.factory:get'
+    arguments: ['cloudhooks']
+  plugin.manager.cloudhook:
+    class: Drupal\cloudhooks\CloudhookPluginManager
+    parent: default_plugin_manager
+  cloudhook.event_subscriber:
+    class: '\Drupal\cloudhooks\EventSubscriber\CloudhookEventSubscriber'
+    arguments:
+      - '@entity_type.manager'
+      - '@plugin.manager.cloudhook'
+      - '@cloudhooks.logger'
+    tags:
+      - { name: 'event_subscriber' }

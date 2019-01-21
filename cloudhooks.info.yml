@@ -1,0 +1,6 @@
+name: Cloudhooks
+type: module
+description: 'Provides an extensible framework for defining and managing cloudhooks.'
+package: Contrib
+version: VERSION
+core: 8.x

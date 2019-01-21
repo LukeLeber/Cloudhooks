@@ -1,0 +1,5 @@
+entity.cloudhook.collection:
+  title: 'Cloudhooks'
+  parent: system.admin_config_system
+  description: 'Configure cloudhooks'
+  route_name: entity.cloudhook.collection

@@ -1,0 +1,10 @@
+version: "2"
+plugins:
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: "Drupal"
+  git-legal:
+    enabled: true
+  markdownlint:
+    enabled: true

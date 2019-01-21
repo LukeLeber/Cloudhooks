@@ -1,0 +1,6 @@
+name: Cloudhooks maintenance
+type: module
+description: 'A set of cloudhook plugins that can control the maintenance mode flag.'
+package: Contrib
+version: VERSION
+core: 8.x

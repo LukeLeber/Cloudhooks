@@ -1,0 +1,69 @@
+language: php
+dist: trusty
+sudo: required
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+services:
+  - docker
+
+php:
+  - 7.2
+
+env:
+  - DRUPAL_CORE='~8.5.0' WEBFLO='~8.5.0'
+  - DRUPAL_CORE='~8.6.0' WEBFLO='~8.6.0'
+  - DRUPAL_CORE='dev-8.x-7.x' WEBFLO='8.7.x-dev'
+
+  matrix:
+    - JOB=job:check-coding-standards
+    - JOB=job:run-unit-tests
+    - JOB=job:run-behat-tests
+
+before_install:
+  - sudo apt-get update > /dev/null
+  - composer self-update
+
+install:
+  - sudo apt-get install -y php-sqlite3
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - composer global require drush/drush-launcher
+
+  # Pull in the latest from the drupal-composer project
+  - composer create-project drupal-composer/drupal-project:8.x-dev drupal --no-interaction && cd drupal
+
+  # Pull in the desired core version
+  - composer require drupal/core:$DRUPAL_CORE --no-update
+  - composer require webflo/drupal-core-require-dev:$WEBFLO --no-update
+
+  # Pull in the necessary testing extensions
+  - composer require behat/mink-extension --dev --no-update
+  - composer require drupal/drupal-extension --dev --no-update
+  - composer update
+
+  # Create a directory for the contrib module(s)
+  - mkdir -p web/modules/contrib
+
+  # Symlink the module under test into the contrib modules directory
+  - ln -s $(readlink -e $(cd ../ && pwd)) web/modules/contrib/cloudhooks
+
+  # Install drupal with the minimal profile
+  - drush site-install minimal --db-url="sqlite:db.sqlite" --account-mail="nobody@example.com" --account-name="testing" --account-pass="testing" --site-mail="nobody@example.com" --site-name="Cloudhooks"
+
+before_script:
+
+  # Enable the modules under test
+  - drush en cloudhooks
+  - drush en cloudhooks_drush
+
+  # Start the internal webserver and wait for it to bind to the port
+  - drush runserver 127.0.0.1:8888 &
+  - until netstat -an 2>/dev/null | grep '8888.*LISTEN'; do true; done
+
+script:
+  - ./vendor/bin/behat --config ./web/modules/contrib/cloudhooks/cloudhooks.behat
+
+#after_success:
+#  - bash <(curl -s https://codecov.io/bash)

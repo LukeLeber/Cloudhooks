@@ -1,0 +1,6 @@
+name: Cloudhooks drush
+type: module
+description: 'A set of cloudhook plugins that encapsulate Drush commands.'
+package: Contrib
+version: VERSION
+core: 8.x

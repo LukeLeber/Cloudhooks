@@ -1,0 +1,6 @@
+name: Cloudhooks notification
+type: module
+description: 'A set of cloudhook plugins that can notify other services of events.'
+package: Contrib
+version: VERSION
+core: 8.x

@@ -1,0 +1,5 @@
+services:
+  cloudhooks_notification.logger:
+    class: 'Psr\Logging\LoggerInterface'
+    factory: 'logger.factory:get'
+    arguments: ['cloudhooks_notification']

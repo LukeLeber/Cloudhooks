@@ -1,0 +1,9 @@
+linters:
+  phpcs:
+    standard: Drupal
+    fixer: false
+files:
+  ignore:
+    - 'vendor/*'
+fixers:
+  enable: false

@@ -1,0 +1,3 @@
+administer cloudhooks:
+  title: 'Administer cloudhooks'
+  restrict access: true

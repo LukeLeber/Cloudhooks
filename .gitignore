@@ -1,2 +1,8 @@
+# IDE files
 .idea
+
+# Composer files
 vendor
+
+# Continuous integration files
+build

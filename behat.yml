@@ -1,0 +1,33 @@
+default:
+  autoload:
+  - '%paths.base%/tests/features/bootstrap'
+  suites:
+    default:
+      paths:
+        - '%paths.base%/tests/features'
+      contexts:
+      - CloudhookFeatureContext
+      - Drupal\DrupalExtension\Context\DrupalContext
+      - Drupal\DrupalExtension\Context\MinkContext
+      - Drupal\DrupalExtension\Context\MessageContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      base_url: http://127.0.0.1:8888
+      sessions:
+        default:
+          goutte: ~
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drush:
+        alias: 'local'
+      drupal:
+        drupal_root: './web'
+      region_map:
+        content: '.layout-content'
+        footer: "#footer"
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages.messages--error'
+        success_message_selector: '.messages.messages--status'
