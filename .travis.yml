@@ -59,7 +59,7 @@ before_script:
   - until netstat -an 2>/dev/null | grep '8888.*LISTEN'; do true; done
 
 script:
-  - ./vendor/bin/behat --config ./web/modules/contrib/cloudhooks/cloudhooks.behat
+  - ../vendor/bin/behat --config ./web/modules/contrib/cloudhooks/cloudhooks.behat
 
 #after_success:
 #  - bash <(curl -s https://codecov.io/bash)
