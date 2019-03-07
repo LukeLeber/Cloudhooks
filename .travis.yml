@@ -13,16 +13,16 @@ php:
   - 7.2
 
 env:
-  - DRUPAL_CORE='~8.5.0' WEBFLO='~8.5.0'
+#  - DRUPAL_CORE='~8.5.0' WEBFLO='~8.5.0'
   - DRUPAL_CORE='~8.6.0' WEBFLO='~8.6.0'
-  - DRUPAL_CORE='dev-8.x-7.x' WEBFLO='8.7.x-dev'
+#  - DRUPAL_CORE='dev-8.x-7.x' WEBFLO='8.7.x-dev'
 
 before_install:
-  - sudo apt-get update > /dev/null
+  - sudo apt-get update && sudo apt-get upgrade > /dev/null
   - composer self-update
 
 install:
-  - sudo apt-get install -y php-sqlite3
+  - sudo apt-get install -y php7.2-sqlite
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer global require drush/drush-launcher
 
