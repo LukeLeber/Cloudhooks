@@ -11,14 +11,13 @@ services:
 
 # PHP version should stay up to date with only the officially supported variants.
 php:
-#  - 7.1
-#  - 7.2
-  - hhvm-3.18
+  - 7.1
+  - 7.2
 
 # Environments should stay up to date with only the officially supported Drupal versions
 env:
-#  - DRUPAL_CORE='~8.5.0'
-#  - DRUPAL_CORE='~8.6.0'
+  - DRUPAL_CORE='~8.5.0'
+  - DRUPAL_CORE='~8.6.0'
   - DRUPAL_CORE='8.7.x-dev'
 
 install:
