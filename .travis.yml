@@ -34,11 +34,17 @@ install:
   - composer update
 
   # Create a directory for the contrib module(s)
-  - mkdir -p web/modules/contrib
+  - mkdir -p web/modules/contrib/cloudhooks
 
-  # Symlink the module under test into the contrib modules directory
-  - ln -s $(readlink -e $(cd ../ && pwd)) web/modules/contrib/cloudhooks
-
+  # Copy the module under test into position
+  - mv modules web/modules/contrib/cloudhooks/
+  - mv src web/modules/contrib/cloudhooks/
+  - mv tests web/modules/contrib/cloudhooks/
+  - mv *.yml web/modules/contrib/cloudhooks/
+  - mv *.json web/modules/contrib/cloudhooks/
+  - mv *.txt web/modules/contrib/cloudhooks/
+  - mv .gitignore web/modules/contrib/cloudhooks/
+  
   # Install drupal with the minimal profile
   - drush site-install minimal --db-url="sqlite:db.sqlite" --account-mail="nobody@example.com" --account-name="testing" --account-pass="testing" --site-mail="nobody@example.com" --site-name="Cloudhooks" --yes
 
