@@ -13,7 +13,7 @@ services:
 php:
 #  - 7.1
 #  - 7.2
-  - hhvm
+  - hhvm-3.18
 
 # Environments should stay up to date with only the officially supported Drupal versions
 env:
