@@ -17,11 +17,6 @@ env:
   - DRUPAL_CORE='~8.6.0' WEBFLO='~8.6.0'
   - DRUPAL_CORE='dev-8.x-7.x' WEBFLO='8.7.x-dev'
 
-  matrix:
-    - JOB=job:check-coding-standards
-    - JOB=job:run-unit-tests
-    - JOB=job:run-behat-tests
-
 before_install:
   - sudo apt-get update > /dev/null
   - composer self-update
