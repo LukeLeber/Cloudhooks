@@ -14,9 +14,9 @@ php:
   - 7.2
 
 env:
-  - DRUPAL_CORE='~8.5.0' WEBFLO='~8.5.0'
-  - DRUPAL_CORE='~8.6.0' WEBFLO='~8.6.0'
-  - DRUPAL_CORE='dev-8.7.x' WEBFLO='8.7.x-dev'
+  - DRUPAL_CORE='~8.5.0'
+  - DRUPAL_CORE='~8.6.0'
+  - DRUPAL_CORE='8.7.x-dev'
 
 install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
@@ -27,7 +27,7 @@ install:
 
   # Pull in the desired core version
   - composer require drupal/core:$DRUPAL_CORE --no-update
-  - composer require webflo/drupal-core-require-dev:$WEBFLO --no-update
+  - composer require webflo/drupal-core-require-dev:$DRUPAL_CORE --no-update
 
   # Pull in the necessary testing extensions
   - composer require behat/behat --dev --no-update
