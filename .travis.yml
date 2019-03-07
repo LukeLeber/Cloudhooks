@@ -10,13 +10,13 @@ services:
   - docker
 
 php:
-  - 7.1
+#  - 7.1
   - 7.2
 
 env:
-#  - DRUPAL_CORE='~8.5.0' WEBFLO='~8.5.0'
+  - DRUPAL_CORE='~8.5.0' WEBFLO='~8.5.0'
   - DRUPAL_CORE='~8.6.0' WEBFLO='~8.6.0'
-  - DRUPAL_CORE='dev-8.x-7.x' WEBFLO='8.7.x-dev'
+  - DRUPAL_CORE='dev-8.7.x' WEBFLO='8.7.x-dev'
 
 install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
@@ -33,7 +33,8 @@ install:
   - composer require behat/behat --dev --no-update
   - composer require behat/mink-extension --dev --no-update
   - composer require drupal/drupal-extension --dev --no-update
-  - composer update
+  - rm composer.lock
+  - composer update --with-dependencies
 
   # Create a directory for the contrib module(s)
   - mkdir -p web/modules/contrib/cloudhooks
