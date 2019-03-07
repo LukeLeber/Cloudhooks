@@ -14,8 +14,8 @@ php:
   - 7.2
 
 env:
-  - DRUPAL_CORE='~8.5.0'
-  - DRUPAL_CORE='~8.6.0'
+#  - DRUPAL_CORE='~8.5.0'
+#  - DRUPAL_CORE='~8.6.0'
   - DRUPAL_CORE='8.7.x-dev'
 
 install:
