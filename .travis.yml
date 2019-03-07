@@ -40,7 +40,7 @@ install:
   - ln -s $(readlink -e $(cd ../ && pwd)) web/modules/contrib/cloudhooks
 
   # Install drupal with the minimal profile
-  - drush site-install minimal --db-url="sqlite:db.sqlite" --account-mail="nobody@example.com" --account-name="testing" --account-pass="testing" --site-mail="nobody@example.com" --site-name="Cloudhooks"
+  - drush site-install minimal --db-url="sqlite:db.sqlite" --account-mail="nobody@example.com" --account-name="testing" --account-pass="testing" --site-mail="nobody@example.com" --site-name="Cloudhooks" --yes
 
 before_script:
 
