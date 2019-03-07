@@ -9,10 +9,13 @@ cache:
 services:
   - docker
 
+# PHP version should stay up to date with only the officially supported variants.
 php:
 #  - 7.1
-  - 7.2
+#  - 7.2
+  - hhvm
 
+# Environments should stay up to date with only the officially supported Drupal versions
 env:
 #  - DRUPAL_CORE='~8.5.0'
 #  - DRUPAL_CORE='~8.6.0'
