@@ -208,7 +208,7 @@ class CloudhookEventSubscriber implements EventSubscriberInterface {
     $this->logStarting(PostDatabaseCopyEvent::POST_DB_COPY);
 
     foreach ($this->getPlugins(PostDatabaseCopyEvent::POST_DB_COPY) as $plugin) {
-      /* @var $plugin \Drupal\cloudhooks\Plugin\Cloudhook\PostDbCopyPluginInterface */
+      /* @var $plugin \Drupal\cloudhooks\Plugin\Cloudhook\PostDatabaseCopyPluginInterface */
 
       $plugin->onPostDatabaseCopy(
         $event->getApplication(),

@@ -5,7 +5,7 @@ namespace Drupal\cloudhooks_maintenance\Plugin\Cloudhook;
 use Drupal\cloudhooks\CloudhookPluginBase;
 use Drupal\cloudhooks\Plugin\Cloudhook\PostCodeDeployPluginInterface;
 use Drupal\cloudhooks\Plugin\Cloudhook\PostCodeUpdatePluginInterface;
-use Drupal\cloudhooks\Plugin\Cloudhook\PostDbCopyPluginInterface;
+use Drupal\cloudhooks\Plugin\Cloudhook\PostDatabaseCopyPluginInterface;
 use Drupal\cloudhooks\Plugin\Cloudhook\PostFilesCopyPluginInterface;
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @package Drupal\cloudhooks_maintenance\Plugin\Cloudhook
  */
-abstract class MaintenanceModeBase extends CloudhookPluginBase implements ContainerFactoryPluginInterface, PostCodeDeployPluginInterface, PostCodeUpdatePluginInterface, PostDbCopyPluginInterface, PostFilesCopyPluginInterface {
+abstract class MaintenanceModeBase extends CloudhookPluginBase implements ContainerFactoryPluginInterface, PostCodeDeployPluginInterface, PostCodeUpdatePluginInterface, PostDatabaseCopyPluginInterface, PostFilesCopyPluginInterface {
 
   /**
    * The state service.

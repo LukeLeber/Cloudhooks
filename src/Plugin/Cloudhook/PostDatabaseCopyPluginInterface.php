@@ -9,7 +9,7 @@ use Drupal\cloudhooks\CloudhookPluginInterface;
  *
  * @package Drupal\cloudhooks\Cloudhook
  */
-interface PostDbCopyPluginInterface extends CloudhookPluginInterface {
+interface PostDatabaseCopyPluginInterface extends CloudhookPluginInterface {
 
   /**
    * Fires on post-db-copy.

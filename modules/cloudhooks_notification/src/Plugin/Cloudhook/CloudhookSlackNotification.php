@@ -4,7 +4,7 @@ namespace Drupal\cloudhooks_notification\Plugin\Cloudhook;
 
 use Drupal\cloudhooks\Plugin\Cloudhook\PostCodeDeployPluginInterface;
 use Drupal\cloudhooks\Plugin\Cloudhook\PostCodeUpdatePluginInterface;
-use Drupal\cloudhooks\Plugin\Cloudhook\PostDbCopyPluginInterface;
+use Drupal\cloudhooks\Plugin\Cloudhook\PostDatabaseCopyPluginInterface;
 use Drupal\cloudhooks\Plugin\Cloudhook\PostFilesCopyPluginInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
@@ -28,7 +28,7 @@ use GuzzleHttp\RequestOptions;
  *   }
  * )
  */
-class CloudhookSlackNotification extends CloudhookNotificationBase implements PostCodeDeployPluginInterface, PostFilesCopyPluginInterface, PostDbCopyPluginInterface, PostCodeUpdatePluginInterface {
+class CloudhookSlackNotification extends CloudhookNotificationBase implements PostCodeDeployPluginInterface, PostFilesCopyPluginInterface, PostDatabaseCopyPluginInterface, PostCodeUpdatePluginInterface {
 
   use StringTranslationTrait;
 

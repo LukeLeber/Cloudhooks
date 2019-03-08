@@ -4,7 +4,6 @@ namespace Drupal\cloudhooks\Entity;
 
 use Drupal\cloudhooks\CloudhookInterface;
 use Drupal\Core\Config\Entity\ConfigEntityBase;
-use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Defines the cloudhook entity.
@@ -40,8 +39,6 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
  * )
  */
 class Cloudhook extends ConfigEntityBase implements CloudhookInterface {
-
-  use StringTranslationTrait;
 
   /**
    * The id of the cloudhook.

@@ -67,7 +67,7 @@ trait CodeEventTrait {
    * {@inheritdoc}
    */
   public function getDeployedTag() {
-    return $this->sourceBranch;
+    return $this->deployedTag;
   }
 
   /**

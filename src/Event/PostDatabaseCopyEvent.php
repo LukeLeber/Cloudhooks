@@ -7,15 +7,17 @@ namespace Drupal\cloudhooks\Event;
  *
  * @package Drupal\cloudhooks\Event
  */
-class PostDatabaseCopyEvent extends CloudhookEventBase implements CopyEventInterface, DatabaseEventInterface {
+class PostDatabaseCopyEvent extends CloudhookEventBase implements CopyEventInterface {
 
   use CopyEventTrait {
     CopyEventTrait::__construct as private __copyEventConstruct;
   }
-
-  use DatabaseEventTrait {
-    DatabaseEventTrait::__construct as private __databaseEventConstruct;
-  }
+  /**
+   * The name of the database that was copied.
+   *
+   * @var string
+   */
+  protected $databaseName;
 
   const POST_DB_COPY = 'post-db-copy';
 
@@ -33,8 +35,14 @@ class PostDatabaseCopyEvent extends CloudhookEventBase implements CopyEventInter
    */
   public function __construct($application, $environment, $database_name, $source_environment) {
     parent::__construct($application, $environment);
-    $this->__databaseEventConstruct($database_name);
     $this->__copyEventConstruct($source_environment);
+    $this->databaseName = $database_name;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getDatabaseName() {
+    return $this->databaseName;
+  }
 }

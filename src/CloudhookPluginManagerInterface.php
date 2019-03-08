@@ -18,6 +18,6 @@ interface CloudhookPluginManagerInterface extends PluginManagerInterface, Cached
    * @return array
    *   All plugin definitions that are compatible with the provided event.
    */
-  public function getDefinitionsForEvent($event);
+  public function getDefinitionsForEvent($event = NULL);
 
 }
