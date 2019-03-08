@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\cloudhook\Unit\Annotation;
+namespace Drupal\Tests\cloudhooks\Unit\Annotation;
 
 use Drupal\cloudhooks\Annotation\Cloudhook;
 use Drupal\Tests\UnitTestCase;
@@ -9,6 +9,8 @@ use Drupal\Tests\UnitTestCase;
  * Test case for the cloudhook plugin annotation.
  *
  * @package Drupal\Tests\cloudhook\Unit\Annotation
+ *
+ * @group cloudhooks
  */
 class CloudhookTest extends UnitTestCase {
 

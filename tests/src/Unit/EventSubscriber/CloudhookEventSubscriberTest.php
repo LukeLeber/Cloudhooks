@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\cloudhooks\EventSubscriber;
+namespace Drupal\Tests\cloudhooks\Unit\EventSubscriber;
 
 use Drupal\cloudhooks\CloudhookPluginManagerInterface;
 use Drupal\cloudhooks\Entity\Cloudhook;
@@ -18,6 +18,13 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Tests\UnitTestCase;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class CloudhookEventSubscriberTest
+ *
+ * @package Drupal\Tests\cloudhooks\EventSubscriber
+ *
+ * @group cloudhooks
+ */
 class CloudhookEventSubscriberTest extends UnitTestCase {
 
   /**

@@ -10,6 +10,13 @@ use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Url;
 use Drupal\Tests\UnitTestCase;
 
+/**
+ * Class CloudhookDeleteFormTest
+ *
+ * @package Drupal\Tests\cloudhooks\Unit\Form
+ *
+ * @group cloudhooks
+ */
 class CloudhookDeleteFormTest extends UnitTestCase {
 
   /**

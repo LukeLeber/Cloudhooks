@@ -9,6 +9,8 @@ use Drupal\Tests\UnitTestCase;
  * Test case for the post-code-update event type.
  *
  * @package Drupal\Tests\cloudhooks\Unit\Event
+ *
+ * @group cloudhooks
  */
 class PostCodeUpdateEventTest extends UnitTestCase {
 

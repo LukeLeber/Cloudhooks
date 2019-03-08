@@ -11,13 +11,13 @@ services:
 
 # PHP version should stay up to date with only the officially supported variants.
 php:
-  - 7.1
+#  - 7.1
   - 7.2
 
 # Environments should stay up to date with only the officially supported Drupal versions
 env:
-  - DRUPAL_CORE='~8.5.0'
-  - DRUPAL_CORE='~8.6.0'
+#  - DRUPAL_CORE='~8.5.0'
+#  - DRUPAL_CORE='~8.6.0'
   - DRUPAL_CORE='8.7.x-dev'
 
 install:
@@ -59,6 +59,7 @@ before_script:
 
 script:
   - ./vendor/bin/behat --config ./web/modules/contrib/cloudhooks/behat.yml
+  - php web/core/scripts/run-tests.sh PHPUnit --url http://127.0.0.1:8888 --sqlite "db.sqlite" cloudhooks
 
 #after_success:
 #  - bash <(curl -s https://codecov.io/bash)

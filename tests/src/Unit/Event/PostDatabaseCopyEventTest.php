@@ -9,6 +9,8 @@ use Drupal\Tests\UnitTestCase;
  * Test case for the post-db-copy event type.
  *
  * @package Drupal\Tests\cloudhooks\Unit\Event
+ *
+ * @group cloudhooks
  */
 class PostDatabaseCopyEventTest extends UnitTestCase {
 

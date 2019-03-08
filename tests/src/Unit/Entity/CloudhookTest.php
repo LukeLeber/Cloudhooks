@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\cloudhooks\Entity;
+namespace Drupal\Tests\cloudhooks\Unit\Entity;
 
 use Drupal\cloudhooks\Entity\Cloudhook;
 use Drupal\Tests\UnitTestCase;
@@ -9,6 +9,8 @@ use Drupal\Tests\UnitTestCase;
  * Test case for the cloudhook configuration entity type.
  *
  * @package Drupal\Tests\cloudhooks\Entity
+ *
+ * @group cloudhooks
  */
 class CloudhookTest extends UnitTestCase {
 
