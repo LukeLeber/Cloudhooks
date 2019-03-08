@@ -30,7 +30,7 @@ class PostFilesCopyEventTest extends UnitTestCase {
     $this->event = new PostFilesCopyEvent(
       'application',
       'environment',
-      'source_environment',
+      'source_environment'
     );
   }
 

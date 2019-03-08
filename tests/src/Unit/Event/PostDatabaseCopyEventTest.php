@@ -31,7 +31,7 @@ class PostDatabaseCopyEventTest extends UnitTestCase {
       'application',
       'environment',
       'database_name',
-      'source_environment',
+      'source_environment'
     );
   }
 
