@@ -56,11 +56,10 @@ before_script:
   # Start the internal webserver and wait for it to bind to the port
   - drush runserver 127.0.0.1:8888 &
   - until netstat -an 2>/dev/null | grep '8888.*LISTEN'; do true; done
-  - which php
 
 script:
   - ./vendor/bin/behat --config ./web/modules/contrib/cloudhooks/behat.yml
-  - php web/core/scripts/run-tests.sh PHPUnit --php /usr/bin/php --url http://127.0.0.1:8888 --sqlite "db.sqlite" cloudhooks
+  - php web/core/scripts/run-tests.sh PHPUnit --php "$(which php)" --url http://127.0.0.1:8888 --sqlite "db.sqlite" cloudhooks
 
 #after_success:
 #  - bash <(curl -s https://codecov.io/bash)
